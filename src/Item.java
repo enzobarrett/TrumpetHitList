@@ -1,9 +1,14 @@
 public class Item {
     private String name;
-    private String hits;
+    private int hits;
 
     Item(String name) {
         this.name = name;
+    }
+
+    Item(String name, int hits) {
+        this.name = name;
+        this.hits = hits;
     }
 
     public String getName() {
@@ -14,11 +19,20 @@ public class Item {
         this.name = name;
     }
 
-    public String getHits() {
+    public int getHits() {
         return hits;
     }
 
-    public void setHits(String hits) {
+    public void setHits(int hits) {
         this.hits = hits;
+    }
+
+    public void hit() {
+        hits++;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s,%d", name, hits);
     }
 }
